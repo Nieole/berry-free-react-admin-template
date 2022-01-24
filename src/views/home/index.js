@@ -1,9 +1,10 @@
 // material-ui
+import { Button } from '@mui/material';
+import { createTheme, ThemeProvider } from '@mui/material/styles';
 
 // project imports
 import MainCard from 'ui-component/cards/MainCard';
-import { DataGrid, GridToolbar } from '@mui/x-data-grid';
-import { Button } from '@mui/material';
+import { zhCN, DataGrid, GridToolbar } from '@mui/x-data-grid';
 import { useEffect, useState } from 'react';
 
 // ==============================|| SAMPLE PAGE ||============================== //
@@ -101,22 +102,35 @@ const Home = () => {
         };
     });
 
+    const theme = createTheme(
+        {
+            palette: {
+                primary: { main: '#1976d2' }
+            }
+        },
+        zhCN
+    );
+
     return (
         <MainCard title="个人信息">
             <div style={{ height: '100%', display: 'flex' }}>
                 <div style={{ flexGrow: 1 }}>
-                    <DataGrid
-                        autoHeight
-                        sortingMode="server"
-                        sortModel={sortModel}
-                        onSortModelChange={handleSortModelChange}
-                        loading={loading}
-                        components={{
-                            Toolbar: GridToolbar
-                        }}
-                        rows={rows}
-                        columns={columns}
-                    />
+                    <ThemeProvider theme={theme}>
+                        <DataGrid
+                            autoHeight
+                            sortingMode="server"
+                            sortModel={sortModel}
+                            onSortModelChange={handleSortModelChange}
+                            loading={loading}
+                            checkboxSelection
+                            disableSelectionOnClick
+                            components={{
+                                Toolbar: GridToolbar
+                            }}
+                            rows={rows}
+                            columns={columns}
+                        />
+                    </ThemeProvider>
                 </div>
             </div>
         </MainCard>
