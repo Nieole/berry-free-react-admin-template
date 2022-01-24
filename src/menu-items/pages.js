@@ -10,7 +10,7 @@ const icons = {
 
 const pages = {
     id: 'pages',
-    title: 'Pages',
+    title: '控制端',
     caption: 'Pages Caption',
     type: 'group',
     children: [

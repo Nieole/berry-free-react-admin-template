@@ -1,15 +1,32 @@
 // assets
-import { IconBrandChrome, IconHelp } from '@tabler/icons';
+import { IconBrandChrome, IconHelp, IconGhost } from '@tabler/icons';
 
 // constant
-const icons = { IconBrandChrome, IconHelp };
+const icons = { IconBrandChrome, IconHelp, IconGhost };
 
 // ==============================|| SAMPLE PAGE & DOCUMENTATION MENU ITEMS ||============================== //
 
-const other = {
+const my = {
     id: 'sample-docs-roadmap',
+    title: '我的信息',
     type: 'group',
     children: [
+        {
+            id: '帮助信息',
+            title: '帮助信息',
+            type: 'item',
+            url: '/help-page',
+            icon: icons.IconHelp,
+            breadcrumbs: false
+        },
+        {
+            id: '我的信息',
+            title: '我的信息',
+            type: 'item',
+            url: '/my-page',
+            icon: icons.IconGhost,
+            breadcrumbs: true
+        },
         {
             id: 'sample-page',
             title: 'Sample Page',
@@ -30,4 +47,4 @@ const other = {
     ]
 };
 
-export default other;
+export default my;
