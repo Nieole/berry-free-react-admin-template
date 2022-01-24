@@ -1,11 +1,12 @@
 // material-ui
-import { Button } from '@mui/material';
+import { Button, TablePagination } from '@mui/material';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 
 // project imports
 import MainCard from 'ui-component/cards/MainCard';
-import { zhCN, DataGrid, GridToolbar } from '@mui/x-data-grid';
+import { zhCN as zhCNGrid, DataGrid, GridToolbar } from '@mui/x-data-grid';
 import { useEffect, useState } from 'react';
+import { zhCN } from '@mui/material/locale';
 
 // ==============================|| SAMPLE PAGE ||============================== //
 
@@ -108,7 +109,8 @@ const Home = () => {
                 primary: { main: '#1976d2' }
             }
         },
-        zhCN
+        zhCN,
+        zhCNGrid
     );
 
     return (

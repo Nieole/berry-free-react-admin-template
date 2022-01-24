@@ -7,6 +7,7 @@ import colors from 'assets/scss/_themes-vars.module.scss';
 import componentStyleOverrides from './compStyleOverride';
 import themePalette from './palette';
 import themeTypography from './typography';
+import { zhCN } from '@mui/material/locale';
 
 /**
  * Represent theme style and structure as per Material-UI
@@ -46,7 +47,7 @@ export const theme = (customization) => {
         typography: themeTypography(themeOption)
     };
 
-    const themes = createTheme(themeOptions);
+    const themes = createTheme(themeOptions, zhCN);
     themes.components = componentStyleOverrides(themeOption);
 
     return themes;

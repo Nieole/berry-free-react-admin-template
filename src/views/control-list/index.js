@@ -1,7 +1,6 @@
 import { DataGrid, zhCN } from '@mui/x-data-grid';
 import { createTheme } from '@mui/material/styles';
 import { useEffect, useState } from 'react';
-import zhCNGrid from 'utils/zhCN';
 
 const data = [
     { id: 1, deviceType: 'Hello', col2: 'World' },
@@ -81,7 +80,6 @@ const ControlList = () => {
             pageSize={pageSize}
             paginationMode="server"
             rowCount={data.length}
-            localeText={zhCNGrid}
             onPageChange={(page) => setRowsState((prev) => ({ ...prev, page }))}
             onPageSizeChange={(pageSize) => setRowsState((prev) => ({ ...prev, pageSize }))}
         />
