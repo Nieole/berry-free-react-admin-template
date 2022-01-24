@@ -28,6 +28,14 @@ const my = {
             breadcrumbs: true
         },
         {
+            id: '个人信息',
+            title: '个人信息',
+            type: 'item',
+            url: '/home',
+            icon: icons.IconBrandChrome,
+            breadcrumbs: false
+        },
+        {
             id: 'sample-page',
             title: 'Sample Page',
             type: 'item',

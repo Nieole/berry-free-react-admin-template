@@ -19,6 +19,7 @@ const SamplePage = Loadable(lazy(() => import('views/sample-page')));
 const HelpPage = Loadable(lazy(() => import('views/help-page')));
 const MyPage = Loadable(lazy(() => import('views/my-page')));
 const ControlList = Loadable(lazy(() => import('views/control-list')));
+const Home = Loadable(lazy(() => import('views/home')));
 
 // ==============================|| MAIN ROUTING ||============================== //
 
@@ -53,6 +54,10 @@ const MainRoutes = {
         {
             path: '/icons/material-icons',
             element: <UtilsMaterialIcons />
+        },
+        {
+            path: '/home',
+            element: <Home />
         },
         {
             path: '/sample-page',
