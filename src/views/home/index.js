@@ -1,5 +1,5 @@
 // material-ui
-import { Button, TablePagination } from '@mui/material';
+import { Button } from '@mui/material';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 
 // project imports
@@ -103,15 +103,7 @@ const Home = () => {
         };
     });
 
-    const theme = createTheme(
-        {
-            palette: {
-                primary: { main: '#1976d2' }
-            }
-        },
-        zhCN,
-        zhCNGrid
-    );
+    const theme = createTheme({}, zhCN, zhCNGrid);
 
     return (
         <MainCard title="个人信息">
