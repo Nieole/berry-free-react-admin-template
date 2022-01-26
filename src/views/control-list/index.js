@@ -26,7 +26,17 @@ const columns = [
     { field: 'accountName', headerName: '小号名称', width: 150 },
     { field: 'userName', headerName: '用户名称', width: 150 },
     { field: 'location', headerName: '地理位置', width: 150 },
-    { field: 'used', headerName: '连接状态', width: 150 },
+    {
+        field: 'used',
+        headerName: '连接状态',
+        width: 150,
+        valueGetter: (params) => {
+            if (params.row.used) {
+                return '否';
+            }
+            return '是';
+        }
+    },
     {
         field: 'canReceipt',
         headerName: '是否真实收货',

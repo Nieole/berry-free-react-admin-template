@@ -2,8 +2,9 @@
     "name": "berry-material-react-free",
     "version": "3.0.1",
     "private": true,
-    "homepage": "https://berrydashboard.io/free",
+    "homepage": "https://berrydashboard.io/",
     "dependencies": {
+        "@apollo/client": "^3.5.8",
         "@emotion/cache": "^11.4.0",
         "@emotion/react": "^11.4.0",
         "@emotion/styled": "^11.3.0",
@@ -22,6 +23,7 @@
         "clsx": "^1.1.1",
         "formik": "^2.2.6",
         "framer-motion": "^4.1.13",
+        "graphql": "^16.2.0",
         "history": "^5.0.0",
         "material-ui-popup-state": "^1.8.0",
         "prop-types": "^15.7.2",
