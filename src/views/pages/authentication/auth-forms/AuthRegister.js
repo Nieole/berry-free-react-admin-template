@@ -205,7 +205,7 @@ const FirebaseRegister = ({ ...others }) => {
                                 type={showPassword ? 'text' : 'password'}
                                 value={values.password}
                                 name="password"
-                                label="Password"
+                                label="密码"
                                 onBlur={handleBlur}
                                 onChange={(e) => {
                                     handleChange(e);

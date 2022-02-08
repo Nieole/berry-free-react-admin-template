@@ -138,21 +138,21 @@ const ControlList = () => {
 
     const [rows, setRows] = useState(row);
 
-    useEffect(() => {
-        let active = true;
-        (async () => {
-            setLoading(true);
-            const newRows = row;
-            if (!active) {
-                return;
-            }
-            setRows(newRows);
-            setLoading(false);
-        })();
-        return () => {
-            active = false;
-        };
-    });
+    // useEffect(() => {
+    //     let active = true;
+    //     (async () => {
+    //         setLoading(true);
+    //         const newRows = row;
+    //         if (!active) {
+    //             return;
+    //         }
+    //         setRows(newRows);
+    //         setLoading(false);
+    //     })();
+    //     return () => {
+    //         active = false;
+    //     };
+    // });
 
     const theme = createTheme({}, zhCN, zhCNGrid);
 
