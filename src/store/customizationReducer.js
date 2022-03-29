@@ -8,7 +8,8 @@ export const initialState = {
     isOpen: [], // for active default menu
     fontFamily: config.fontFamily,
     borderRadius: config.borderRadius,
-    opened: true
+    opened: true,
+    isLogin: false
 };
 
 // ==============================|| CUSTOMIZATION REDUCER ||============================== //
@@ -36,6 +37,16 @@ const customizationReducer = (state = initialState, action) => {
             return {
                 ...state,
                 borderRadius: action.borderRadius
+            };
+        case actionTypes.LOGIN:
+            return {
+                ...state,
+                isLogin: true
+            };
+        case actionTypes.LOGOUT:
+            return {
+                ...state,
+                isLogin: false
             };
         default:
             return state;

@@ -1,6 +1,8 @@
 import { useState } from 'react';
 
 // material-ui
+import { useDispatch, useSelector } from 'react-redux';
+import { LOGIN } from 'store/actions';
 import { useTheme } from '@mui/material/styles';
 import {
     Box,
@@ -32,6 +34,7 @@ import login from 'utils/fetch';
 // ============================|| FIREBASE - LOGIN ||============================ //
 
 const FirebaseLogin = ({ ...others }) => {
+    const dispatch = useDispatch();
     const theme = useTheme();
     const [checked, setChecked] = useState(true);
 
@@ -58,6 +61,7 @@ const FirebaseLogin = ({ ...others }) => {
                     login(values)
                         .then((data) => data.json())
                         .then((data) => {
+                            dispatch({ type: LOGIN });
                             setStatus({ success: true });
                             setSubmitting(false);
                         })
