@@ -12,7 +12,7 @@ const my = {
     type: 'group',
     children: [
         {
-            id: '帮助信息',
+            id: 'help-page',
             title: '帮助信息',
             type: 'item',
             url: '/help-page',
@@ -20,7 +20,7 @@ const my = {
             breadcrumbs: false
         },
         {
-            id: '我的信息',
+            id: 'my-page',
             title: '我的信息',
             type: 'item',
             url: '/my-page',
@@ -28,7 +28,7 @@ const my = {
             breadcrumbs: true
         },
         {
-            id: '个人信息',
+            id: 'home',
             title: '个人信息',
             type: 'item',
             url: '/home',

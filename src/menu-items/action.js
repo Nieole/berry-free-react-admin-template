@@ -14,7 +14,7 @@ const icons = {
 // ==============================|| UTILITIES MENU ITEMS ||============================== //
 
 const action = {
-    id: '操作',
+    id: 'actions',
     title: '操作',
     type: 'group',
     children: [
@@ -65,27 +65,27 @@ const action = {
             ]
         },
         {
-            id: '操作端',
+            id: 'operator',
             title: '操作端',
             type: 'collapse',
             icon: icons.IconBasket,
             children: [
                 {
-                    id: '控制列表',
+                    id: 'control-list',
                     title: '控制列表',
                     type: 'item',
                     url: '/control-list',
                     breadcrumbs: false
                 },
                 {
-                    id: '操作历史',
+                    id: 'operation-history',
                     title: '操作历史',
                     type: 'item',
                     url: '/icons/material-icons',
                     breadcrumbs: false
                 },
                 {
-                    id: '我的补单记录',
+                    id: 'my-supplementary-record',
                     title: '我的补单记录',
                     type: 'item',
                     url: '/icons/material-icons',
@@ -94,27 +94,27 @@ const action = {
             ]
         },
         {
-            id: '挂机端',
+            id: 'on-hook',
             title: '挂机端',
             type: 'collapse',
             icon: icons.IconAffiliate,
             children: [
                 {
-                    id: '设备管理',
+                    id: 'device-management',
                     title: '设备管理',
                     type: 'item',
                     url: '/icons/material-icons',
                     breadcrumbs: false
                 },
                 {
-                    id: '操作记录',
+                    id: 'operation-record',
                     title: '操作记录',
                     type: 'item',
                     url: '/icons/material-icons',
                     breadcrumbs: false
                 },
                 {
-                    id: '我的垫付记录',
+                    id: 'my-advance-payment-record',
                     title: '我的垫付记录',
                     type: 'item',
                     url: '/icons/material-icons',

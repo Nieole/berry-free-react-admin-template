@@ -12,7 +12,7 @@ const dashboard = {
     type: 'group',
     children: [
         {
-            id: '首页',
+            id: 'dashboard',
             title: '首页',
             type: 'item',
             url: '/dashboard/default',
