@@ -1,6 +1,6 @@
 // project imports
 import config from 'config';
-
+import localforage from 'localforage';
 // action - state management
 import * as actionTypes from './actions';
 
@@ -9,7 +9,8 @@ export const initialState = {
     fontFamily: config.fontFamily,
     borderRadius: config.borderRadius,
     opened: true,
-    isLogin: false
+    isLogin: false,
+    token: null
 };
 
 // ==============================|| CUSTOMIZATION REDUCER ||============================== //
@@ -39,9 +40,11 @@ const customizationReducer = (state = initialState, action) => {
                 borderRadius: action.borderRadius
             };
         case actionTypes.LOGIN:
+            localforage.setItem('token', action.payload);
             return {
                 ...state,
-                isLogin: true
+                isLogin: true,
+                token: action.payload
             };
         case actionTypes.LOGOUT:
             return {

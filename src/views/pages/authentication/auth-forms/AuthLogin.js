@@ -61,7 +61,8 @@ const FirebaseLogin = ({ ...others }) => {
                     login(values)
                         .then((data) => data.json())
                         .then((data) => {
-                            dispatch({ type: LOGIN, payload: data });
+                            console.log('login success', data);
+                            dispatch({ type: LOGIN, payload: data.token });
                             setStatus({ success: true });
                             setSubmitting(false);
                         })
