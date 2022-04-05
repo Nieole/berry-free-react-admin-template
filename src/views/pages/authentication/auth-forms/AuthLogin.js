@@ -30,6 +30,7 @@ import AnimateButton from 'ui-component/extended/AnimateButton';
 import Visibility from '@mui/icons-material/Visibility';
 import VisibilityOff from '@mui/icons-material/VisibilityOff';
 import login from 'utils/fetch';
+import localforage from 'localforage';
 
 // ============================|| FIREBASE - LOGIN ||============================ //
 
@@ -61,10 +62,16 @@ const FirebaseLogin = ({ ...others }) => {
                     login(values)
                         .then((data) => data.json())
                         .then((data) => {
-                            console.log('login success', data);
-                            dispatch({ type: LOGIN, payload: data.token });
-                            setStatus({ success: true });
-                            setSubmitting(false);
+                            localforage
+                                .setItem('token', data.token)
+                                .then(() => {
+                                    setStatus({ success: true });
+                                    setSubmitting(false);
+                                    dispatch({ type: LOGIN, payload: data.token });
+                                })
+                                .catch((err) => {
+                                    setErrors({ submit: '登录失败，请确认用户名与密码后重试' });
+                                });
                         })
                         .catch((error) => {
                             setStatus({ success: false });

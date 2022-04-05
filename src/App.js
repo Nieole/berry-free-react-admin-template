@@ -20,7 +20,9 @@ const App = () => {
     const dispatch = useDispatch();
     if (!customization.isLogin) {
         localforage.getItem('token').then((value) => {
-            dispatch({ type: LOGIN, payload: value });
+            if (value) {
+                dispatch({ type: LOGIN, payload: value });
+            }
         });
     }
     return (

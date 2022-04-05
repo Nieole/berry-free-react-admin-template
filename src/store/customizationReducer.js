@@ -40,7 +40,6 @@ const customizationReducer = (state = initialState, action) => {
                 borderRadius: action.borderRadius
             };
         case actionTypes.LOGIN:
-            localforage.setItem('token', action.payload);
             return {
                 ...state,
                 isLogin: true,
@@ -49,7 +48,8 @@ const customizationReducer = (state = initialState, action) => {
         case actionTypes.LOGOUT:
             return {
                 ...state,
-                isLogin: false
+                isLogin: false,
+                token: null
             };
         default:
             return state;
