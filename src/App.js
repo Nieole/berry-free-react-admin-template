@@ -13,18 +13,21 @@ import themes from 'themes';
 import NavigationScroll from 'layout/NavigationScroll';
 import localforage from 'localforage';
 import { LOGIN } from './store/actions';
+import { useEffect } from 'react';
 // ==============================|| APP ||============================== //
 
 const App = () => {
     const customization = useSelector((state) => state.customization);
     const dispatch = useDispatch();
-    if (!customization.isLogin) {
-        localforage.getItem('token').then((value) => {
-            if (value) {
-                dispatch({ type: LOGIN, payload: value });
-            }
-        });
-    }
+    useEffect(() => {
+        if (!customization.isLogin) {
+            localforage.getItem('token').then((value) => {
+                if (value) {
+                    dispatch({ type: LOGIN, payload: value });
+                }
+            });
+        }
+    }, [customization.isLogin]);
     return (
         <StyledEngineProvider injectFirst>
             <ThemeProvider theme={themes(customization)}>
