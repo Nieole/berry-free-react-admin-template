@@ -6,3 +6,5 @@ export const SET_FONT_FAMILY = '@customization/SET_FONT_FAMILY';
 export const SET_BORDER_RADIUS = '@customization/SET_BORDER_RADIUS';
 export const LOGIN = '@customization/LOGIN';
 export const LOGOUT = '@customization/LOGOUT';
+export const SNACKBAR_OPEN = '@customization/SNACKBAR_OPEN';
+export const SNACKBAR_CLOSE = '@customization/SNACKBAR_CLOSE';

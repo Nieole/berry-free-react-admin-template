@@ -3,6 +3,7 @@ import config from 'config';
 import localforage from 'localforage';
 // action - state management
 import * as actionTypes from './actions';
+import { SNACKBAR_CLOSE, SNACKBAR_OPEN } from './actions';
 
 export const initialState = {
     isOpen: [], // for active default menu
@@ -10,7 +11,9 @@ export const initialState = {
     borderRadius: config.borderRadius,
     opened: true,
     isLogin: false,
-    token: null
+    token: null,
+    snackbarOpen: false,
+    snackbarMessage: null
 };
 
 // ==============================|| CUSTOMIZATION REDUCER ||============================== //
@@ -50,6 +53,18 @@ const customizationReducer = (state = initialState, action) => {
                 ...state,
                 isLogin: false,
                 token: null
+            };
+        case SNACKBAR_OPEN:
+            return {
+                ...state,
+                snackbarOpen: true,
+                snackbarMessage: action.payload
+            };
+        case SNACKBAR_CLOSE:
+            return {
+                ...state,
+                snackbarOpen: false,
+                snackbarMessage: null
             };
         default:
             return state;
