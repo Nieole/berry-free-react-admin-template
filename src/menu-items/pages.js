@@ -25,14 +25,14 @@ const pages = {
                     title: 'Login',
                     type: 'item',
                     url: '/login',
-                    target: true
+                    target: false
                 },
                 {
                     id: 'register',
                     title: 'Register',
                     type: 'item',
                     url: '/register',
-                    target: true
+                    target: false
                 }
             ]
         }

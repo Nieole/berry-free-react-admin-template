@@ -31,10 +31,13 @@ import Visibility from '@mui/icons-material/Visibility';
 import VisibilityOff from '@mui/icons-material/VisibilityOff';
 import login from 'utils/fetch';
 import localforage from 'localforage';
+import { useNavigate, Navigate } from 'react-router-dom';
 
 // ============================|| FIREBASE - LOGIN ||============================ //
 
 const FirebaseLogin = ({ ...others }) => {
+    const state = useSelector((state) => state.customization);
+    const navigate = useNavigate();
     const dispatch = useDispatch();
     const theme = useTheme();
     const [checked, setChecked] = useState(true);
@@ -47,7 +50,9 @@ const FirebaseLogin = ({ ...others }) => {
     const handleMouseDownPassword = (event) => {
         event.preventDefault();
     };
-
+    if (state.isLogin) {
+        return <Navigate to="/" replace />;
+    }
     return (
         <>
             <Formik
@@ -68,6 +73,7 @@ const FirebaseLogin = ({ ...others }) => {
                                     setStatus({ success: true });
                                     setSubmitting(false);
                                     dispatch({ type: LOGIN, payload: data.token });
+                                    navigate('/', { replace: true });
                                 })
                                 .catch((err) => {
                                     setErrors({ submit: '登录失败，请确认用户名与密码后重试' });

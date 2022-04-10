@@ -14,16 +14,20 @@ import NavigationScroll from 'layout/NavigationScroll';
 import localforage from 'localforage';
 import { LOGIN } from './store/actions';
 import { useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 // ==============================|| APP ||============================== //
 
 const App = () => {
     const customization = useSelector((state) => state.customization);
     const dispatch = useDispatch();
+    const navigate = useNavigate();
     useEffect(() => {
         if (!customization.isLogin) {
             localforage.getItem('token').then((value) => {
                 if (value) {
                     dispatch({ type: LOGIN, payload: value });
+                } else {
+                    navigate('login', { replace: true });
                 }
             });
         }
